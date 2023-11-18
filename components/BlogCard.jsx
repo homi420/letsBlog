@@ -17,6 +17,7 @@ const BlogCard = ({ blog, type = "feed", handleDelete, handleEdit }) => {
           height={40}
           className="object-contain rounded-full"
           src={blog.user.image}
+          alt="profilePic"
         />
         {type === "feed" ? (
           <p className="text-gray-500">@{blog.user.userName}</p>

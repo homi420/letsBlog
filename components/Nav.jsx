@@ -99,6 +99,13 @@ const Nav = () => {
                   My Profile
                 </Link>
                 <Link
+                  href="/blogs"
+                  className="dropdown_link"
+                  onClick={() => setToggleDropdown(false)}
+                >
+                  View Blogs
+                </Link>
+                <Link
                   href="/createBlog"
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
@@ -124,7 +131,7 @@ const Nav = () => {
           <>
             {(providers &&
               Object.values(providers).map((provider) => (
-                <>
+                <div key={provider.id}>
                   <DarkModeBtn />
 
                   <button
@@ -137,7 +144,7 @@ const Nav = () => {
                   >
                     Sign In
                   </button>
-                </>
+                </div>
               ))) || (
               <Image
                 width={50}

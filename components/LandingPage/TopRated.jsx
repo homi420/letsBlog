@@ -25,12 +25,22 @@ const TopRated = () => {
       <div className="grid grid-cols-2 gap-4 my-12">
         {!loading ? (
           blogs.map((blog) => {
-            return <BlogCard blog={blog} />;
+            return <BlogCard key={blog._id} blog={blog} />;
           })
         ) : (
           <>
-            <Image src={"/assets/icons/loader.svg"} width={50} height={50} />
-            <Image src={"/assets/icons/loader.svg"} width={50} height={50} />
+            <Image
+              alt="loader"
+              src={"/assets/icons/loader.svg"}
+              width={50}
+              height={50}
+            />
+            <Image
+              alt="loader"
+              src={"/assets/icons/loader.svg"}
+              width={50}
+              height={50}
+            />
           </>
         )}
       </div>
