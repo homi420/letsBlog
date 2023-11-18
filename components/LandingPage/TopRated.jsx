@@ -22,7 +22,7 @@ const TopRated = () => {
       setLoading(false);
     };
     getBlogs();
-  });
+  }, []);
   return (
     <section className="p-4 my-48">
       <h3>Top Rated Blogs</h3>
