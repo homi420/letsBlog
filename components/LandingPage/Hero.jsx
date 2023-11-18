@@ -24,7 +24,7 @@ const Hero = ({ img }) => {
     >
       <div className="self-center  3xs:text-center">
         <h1 className="heroHeading dark:text-ghost-white ">
-          Let's <span className="text-celestial-blue"> Create</span> &{" "}
+          Lets <span className="text-celestial-blue"> Create</span> &{" "}
           <span className="text-celestial-blue"> Share.</span> <br />
           <span className="">
             Lets <span className="text-celestial-blue font-bold">Blog.</span>
