@@ -22,6 +22,7 @@ const Blogs = () => {
   useEffect(() => {
     const getBlogs = async () => {
       setLoading(true);
+      console.log("Use effect triggered");
       const response = await fetch("/api/blogs", {
         method: "GET",
         headers: {
@@ -34,7 +35,7 @@ const Blogs = () => {
       setLoading(false);
     };
     getBlogs();
-  }, []);
+  });
   return (
     <div className="p-4">
       <section className="flex justify-center flex-col">
