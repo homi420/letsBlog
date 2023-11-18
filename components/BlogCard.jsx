@@ -1,14 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
 
 const BlogCard = ({ blog, type = "feed", handleDelete, handleEdit }) => {
-  const router = useRouter();
-  const toBlogPage = (id) => {
-    router.push(`/blogs/${id}`);
-  };
+  console.log(blog);
   return (
     <div className="dark:border-gunmetal border-teal-100 border rounded sm:col-auto 3xs:col-span-12 cursor-pointer shadow-md hover:shadow-lg  transition-shadow dark:shadow-black self-start ">
       <div className="flex items-center gap-2 dark:border-gunmetal border-teal-100  border-b p-2">
@@ -49,7 +45,7 @@ const BlogCard = ({ blog, type = "feed", handleDelete, handleEdit }) => {
       <div className="flex justify-between items-end mt-3">
         <p className="text-gray-500 p-2"> {blog.category}</p>
         <Link className="btnSp mx-1 my-2" href={`/blogs/${blog._id}`}>
-          View Blog
+          <a>View Blog</a>
         </Link>
       </div>
     </div>
