@@ -1,8 +1,9 @@
 import Blog from "@models/Blogs";
 import { connectToDB } from "@utils/database";
 
-export default async function handler(req) {
-  const { id, user, title, category, description, blog } = await req.json();
+export const PATCH = async (req, { params }) => {
+  const id = params.id;
+  const { user, title, category, description, blog } = await req.json();
   try {
     await connectToDB();
     console.log(blog);
@@ -28,4 +29,4 @@ export default async function handler(req) {
       status: 500,
     });
   }
-}
+};
