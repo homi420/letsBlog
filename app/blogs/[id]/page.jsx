@@ -34,7 +34,6 @@ const BlogPage = ({ params }) => {
         }
       );
       const json = await response.json();
-      console.log(json);
       setFilteredBlogs(json);
       // setLoading(false);
     };

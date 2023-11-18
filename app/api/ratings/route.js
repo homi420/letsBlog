@@ -38,7 +38,6 @@ export const POST = async (req) => {
       review,
       rating,
     });
-    console.log(newRating);
     return new Response(JSON.stringify({ message: "Review Posted" }), {
       status: 200,
     });
