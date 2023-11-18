@@ -19,7 +19,6 @@ const EditBlog = ({ params }) => {
       const response = await fetch(`/api/blogs/read/byBlogId/${blogId}`, {
         method: "GET",
         headers: {
-          Accept: " */*",
           "content-type": "application/json",
         },
       });
