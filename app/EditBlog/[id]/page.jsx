@@ -26,7 +26,6 @@ const EditBlog = ({ params }) => {
       const json = await response.json();
       setSelectedCategory(json.category);
       setBlogInput(json);
-      console.log(blogInput);
     };
     if (blogId) {
       getBlogDetails();

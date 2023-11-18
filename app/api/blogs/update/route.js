@@ -1,8 +1,10 @@
 import Blog from "@models/Blogs";
 import { connectToDB } from "@utils/database";
-import misterCrud from "mister-crud";
 
-export const PATCH = async (req) => {
+export default async function handler(req, res) {
+  if (req.method !== "PATCH") {
+    return res.status(405).json({ message: "Method Not Allowed" });
+  }
   const { id, user, title, category, description, blog } = await req.json();
   try {
     await connectToDB();
@@ -29,4 +31,4 @@ export const PATCH = async (req) => {
       status: 500,
     });
   }
-};
+}

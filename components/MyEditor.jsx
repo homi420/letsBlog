@@ -73,7 +73,6 @@ const MyEditor = ({ readOnly = false }) => {
           convertFromRaw(JSON.parse(blogInput.blog))
         )
   );
-  console.log(blogInput);
   const onChange = (newEditorState) => {
     setEditorState(newEditorState);
     const contentState = editorState.getCurrentContent();

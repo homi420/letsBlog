@@ -43,7 +43,6 @@ const Profile = () => {
       });
       const json = await response.json();
       setBlogs(json);
-      console.log(json);
       setChangeInBlogs(false);
       setLoading(false);
     };

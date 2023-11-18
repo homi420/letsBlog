@@ -103,7 +103,6 @@ const Testimonials = () => {
         method: "GET",
       });
       const json = await response.json();
-      console.log(json);
       setReviews(json);
     };
     getReviews();
