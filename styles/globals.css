@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Exo+2&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* CSS HEX */
+  --ghost-white: #fffaffff;
+  --gunmetal: #272d2dff;
+  --celestial-blue: #009ddcff;
+
+  /* CSS Gradient */
+  --gradient-top: linear-gradient(0deg, #fffaffff, #272d2dff, #009ddcff);
+  --gradient-right: linear-gradient(90deg, #fffaffff, #272d2dff, #009ddcff);
+  --gradient-bottom: linear-gradient(180deg, #fffaffff, #272d2dff, #009ddcff);
+  --gradient-left: linear-gradient(270deg, #fffaffff, #272d2dff, #009ddcff);
+  --gradient-top-right: linear-gradient(45deg, #fffaffff, #272d2dff, #009ddcff);
+  --gradient-bottom-right: linear-gradient(
+    135deg,
+    #fffaffff,
+    #272d2dff,
+    #009ddcff
+  );
+  --gradient-top-left: linear-gradient(225deg, #fffaffff, #272d2dff, #009ddcff);
+  --gradient-bottom-left: linear-gradient(
+    315deg,
+    #fffaffff,
+    #272d2dff,
+    #009ddcff
+  );
+  --gradient-radial: radial-gradient(#fffaffff, #272d2dff, #009ddcff);
+}
+body {
+  @apply text-gunmetal dark:text-ghost-white;
+}
+h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+h2 {
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+}
+h3 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.heroHeading {
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  @apply 2xs:text-center sm:text-start font-semibold font-Titillium;
+}
+.stepsHeading {
+  font-size: clamp(2rem, 6vw, 4rem);
+  @apply font-Titillium text-center;
+}
+
+.app {
+  @apply font-inter;
+}
+@layer components {
+  .black_btn {
+    @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  }
+  .white_btn {
+    @apply rounded-full border border-ghost-white bg-ghost-white py-2 px-5 text-gunmetal transition-all hover:bg-transparent hover:text-ghost-white text-center text-sm font-inter flex items-center justify-center;
+  }
+  .btnSp {
+    @apply black_btn  dark:white_btn;
+  }
+}
+.blue_btn {
+  @apply rounded-full border border-celestial-blue bg-celestial-blue py-2 px-5 text-ghost-white transition-all hover:bg-transparent hover:text-celestial-blue text-center text-sm font-inter flex items-center justify-center;
+}
+.outline_btn {
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+.outline_btn_blue {
+  @apply rounded-full border border-celestial-blue text-celestial-blue bg-transparent py-1.5 px-5  transition-all hover:bg-celestial-blue  hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+
+.logo_text {
+  @apply max-sm:hidden font-satoshi font-semibold text-lg text-celestial-blue tracking-wide;
+}
+.dropdown {
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+
+.dropdown_link {
+  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+}
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+.formGroup {
+  @apply flex flex-col gap-4;
+}
+.cardSection {
+  @apply grid md:grid-cols-3 xl:grid-cols-4 sm:grid-cols-2 3xs:grid-cols-1 my-10 p-2 gap-4 items-center;
+}
+
+button:disabled {
+  @apply rounded-full border border-gray-500 bg-gray-500 py-2 px-5 text-ghost-white transition-all   text-center text-sm font-inter flex items-center justify-center opacity-5;
+}
+.loadingContainer {
+  @apply fixed top-0 left-0 w-full h-1 bg-slate-200;
+}
+.loadingBar {
+  @apply h-full bg-celestial-blue transition-all;
+}
