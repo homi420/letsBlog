@@ -3,6 +3,7 @@ import { connectToDB } from "@utils/database";
 
 export const GET = async (req) => {
   try {
+    console.log("backend triggered");
     await connectToDB();
     const resp = await Blog.find().populate("user");
     return new Response(JSON.stringify(resp), { status: 200 });

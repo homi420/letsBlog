@@ -1,10 +1,7 @@
 import Blog from "@models/Blogs";
 import { connectToDB } from "@utils/database";
 
-export default async function handler(req, res) {
-  if (req.method !== "PATCH") {
-    return res.status(405).json({ message: "Method Not Allowed" });
-  }
+export default async function handler(req) {
   const { id, user, title, category, description, blog } = await req.json();
   try {
     await connectToDB();
