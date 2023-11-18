@@ -7,7 +7,7 @@ const RelatedBlogs = ({ blogs }) => {
       <h6 className="my-4 text-2xl">Related Blogs</h6>
       <div className="">
         {blogs?.map((blog) => {
-          return <BlogCard blog={blog} />;
+          return <BlogCard key={blog._id} blog={blog} />;
         })}
       </div>
     </div>
