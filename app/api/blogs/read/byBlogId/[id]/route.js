@@ -5,7 +5,7 @@ export const GET = async (req, { params }) => {
   const blogId = params.id;
   try {
     await connectToDB();
-    const resp = await Blog.findById(blogId).populate("user").populate("ratings");
+    const resp = await Blog.findById(blogId).populate("user");
     return new Response(JSON.stringify(resp), { status: 200 });
   } catch (error) {
     console.log(error);
