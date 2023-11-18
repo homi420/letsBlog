@@ -42,7 +42,11 @@ const Profile = () => {
         },
       });
       const json = await response.json();
-      setBlogs(json);
+      if (response.ok) {
+        setBlogs(json);
+      } else {
+        handleAlert(response, json);
+      }
       setChangeInBlogs(false);
       setLoading(false);
     };
