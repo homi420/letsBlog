@@ -81,7 +81,13 @@ const TestimonialCards = ({ userName, image, review, rating }) => {
   return (
     <div className="my-10 rounded bg-gunmetal dark:bg-ghost-white   items-center p-4 shadow-black shadow-md dark:shadow-celestial-blue  mx-2">
       <div className="flex items-center gap-2">
-        <Image width={50} height={50} src={image} className="rounded-full" />
+        <Image
+          width={50}
+          height={50}
+          src={image}
+          className="rounded-full"
+          alt="profilePic"
+        />
         <h6 className="text-celestial-blue ">@{userName}</h6>
       </div>
       <p className="my-5 text-ghost-white dark:text-gunmetal">{review}</p>

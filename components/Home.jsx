@@ -27,7 +27,12 @@ const Home = () => {
       </>
     )) || (
       <div className="flex items-center justify-center">
-        <Image src={"/assets/icons/loader.svg"} width={50} height={50} />
+        <Image
+          src={"/assets/icons/loader.svg"}
+          width={50}
+          height={50}
+          alt="Loader"
+        />
       </div>
     )
   );

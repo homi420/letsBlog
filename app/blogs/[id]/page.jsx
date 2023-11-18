@@ -50,7 +50,12 @@ const BlogPage = ({ params }) => {
           </>
         ) : (
           <div>
-            <Image src={"/assets/icons/loader.svg"} width={50} height={50} />
+            <Image
+              src={"/assets/icons/loader.svg"}
+              width={50}
+              height={50}
+              alt="loader"
+            />
           </div>
         )}
       </div>

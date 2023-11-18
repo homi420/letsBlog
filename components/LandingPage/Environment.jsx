@@ -9,7 +9,13 @@ const Environment = ({ img }) => {
   return (
     <section className="grid sm:grid-cols-2 3xs:grid-cols-1 my-48 p-4 items-center">
       <div>
-        <Image src={img} width={600} height={600} className="object-contain" />
+        <Image
+          alt="environment"
+          src={img}
+          width={600}
+          height={600}
+          className="object-contain"
+        />
       </div>
       <div>
         <h3>Environment</h3>
