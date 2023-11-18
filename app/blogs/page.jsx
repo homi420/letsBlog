@@ -55,7 +55,7 @@ const Blogs = () => {
         <section className="cardSection">
           {filtered.length !== 0 ? (
             filtered.map((blog) => {
-              return <BlogCard blog={blog} />;
+              return <BlogCard key={blog._id} blog={blog} />;
             })
           ) : (
             <p>No Blogs To Display...</p>

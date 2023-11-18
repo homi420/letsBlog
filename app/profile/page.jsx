@@ -65,6 +65,7 @@ const Profile = () => {
                     type="profile"
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
+                    key={blog._id}
                   />
                 );
               })

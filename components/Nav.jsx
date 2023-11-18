@@ -18,7 +18,7 @@ const Nav = () => {
       <Link href={"/"} className="flex flex-center">
         <FaPen className="text-xl mx-1" />
 
-        <p className=" logo_text ">Let's Blog</p>
+        <p className=" logo_text ">Lets Blog</p>
       </Link>
       {/* Desktop Navigation */}
       <nav className="sm:flex hidden ">

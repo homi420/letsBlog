@@ -16,7 +16,7 @@ const RootLayout = ({ children }) => {
         <body>
           <main className="app">
             <Providers />
-            <MyMain children={children} />
+            <MyMain>{children}</MyMain>
           </main>
         </body>
       </html>

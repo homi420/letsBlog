@@ -27,7 +27,7 @@ const Hero = ({ img }) => {
           Let's <span className="text-celestial-blue"> Create</span> &{" "}
           <span className="text-celestial-blue"> Share.</span> <br />
           <span className="">
-            Let's <span className="text-celestial-blue font-bold">Blog.</span>
+            Lets <span className="text-celestial-blue font-bold">Blog.</span>
           </span>
         </h1>
         <div className="btnGroup my-10 flex 3xs:justify-center sm:justify-start">

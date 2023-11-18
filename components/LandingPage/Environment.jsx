@@ -16,10 +16,10 @@ const Environment = ({ img }) => {
         <p className="my-4 leading-loose">
           Our environment caters to beginners, offering an advantageous platform
           for writers. With its user-friendly interface and the added benefit of
-          a dark mode, it's particularly helpful for those who face challenges
+          a dark mode, it is particularly helpful for those who face challenges
           with prolonged screen exposure. The simplicity of our rich text editor
           ensures a seamless blogging experience. Rest assured, choosing us is a
-          decision you'll never regret.
+          decision you will never regret.
         </p>
         <button className="my-6" type="button">
           <Link className="blue_btn   " href={"/createBlog"}>
