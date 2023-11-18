@@ -9,13 +9,14 @@ const TopRated = () => {
   useEffect(() => {
     const getBlogs = async () => {
       setLoading(true);
-      const response = await fetch("/api/blogs", {
+      const response = await fetch("/api/blogs/read/all", {
         method: "GET",
         headers: {
           "content-type": "application/json",
         },
       });
       const json = await response.json();
+      console.log(json);
       const sortedJson = json.sort((a, b) => b.avgRating - a.avgRating);
       const topRated = sortedJson.slice(0, 2);
       setBlogs(topRated);
