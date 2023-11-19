@@ -8,6 +8,7 @@ const TopRated = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getBlogs = async () => {
+      console.log("use effect triggered");
       setLoading(true);
       const response = await fetch("/api/blogs/read/all", {
         method: "GET",

@@ -45,7 +45,7 @@ const BlogCard = ({ blog, type = "feed", handleDelete, handleEdit }) => {
       <div className="flex justify-between items-end mt-3">
         <p className="text-gray-500 p-2"> {blog.category}</p>
         <Link className="btnSp mx-1 my-2" href={`/blogs/${blog._id}`}>
-          <a>View Blog</a>
+          View Blog
         </Link>
       </div>
     </div>
