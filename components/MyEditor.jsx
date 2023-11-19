@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Editor,
   EditorState,
@@ -73,6 +73,10 @@ const MyEditor = ({ readOnly = false }) => {
           convertFromRaw(JSON.parse(blogInput.blog))
         )
   );
+  useEffect(() => {
+    const contentState = editorState.getCurrentContent();
+    setRawContent(convertToRaw(contentState));
+  }, []);
   const onChange = (newEditorState) => {
     setEditorState(newEditorState);
     const contentState = editorState.getCurrentContent();

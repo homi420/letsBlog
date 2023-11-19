@@ -22,12 +22,10 @@ const Blogs = () => {
   useEffect(() => {
     const getBlogs = async () => {
       setLoading(true);
-      console.log("Use effect triggered");
       const response = await fetch("/api/blogs/read/all/1", {
         method: "GET",
       });
       const json = await response.json();
-      console.log(json);
       setBlogs(json);
       setFiltered(json);
       setLoading(false);
