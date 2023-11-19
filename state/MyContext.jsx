@@ -14,6 +14,7 @@ export const MyContextProvider = ({ children }) => {
   const [blogToUpdate, setBlogToUpdate] = useState();
   const [rawContent, setRawContent] = useState("");
   const [isPosting, setIsPosting] = useState(false);
+  console.log(rawContent);
 
   const [providers, setProviders] = useState();
   useEffect(() => {
@@ -87,6 +88,7 @@ export const MyContextProvider = ({ children }) => {
   // Updating the Blog...
   const updateBlog = async () => {
     setIsPosting(true);
+    console.log(rawContent);
     const response = await fetch(`/api/blogs/update/${blogToUpdate}`, {
       method: "PATCH",
       body: JSON.stringify({
