@@ -8,13 +8,11 @@ const TopRated = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getBlogs = async () => {
-      console.log("use effect triggered");
       setLoading(true);
       const response = await fetch("/api/blogs/read/all/1", {
         method: "GET",
       });
       const json = await response.json();
-      console.log(json);
       const sortedJson = json.sort((a, b) => b.avgRating - a.avgRating);
       const topRated = sortedJson.slice(0, 2);
       setBlogs(topRated);

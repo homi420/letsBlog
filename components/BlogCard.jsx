@@ -4,7 +4,6 @@ import React from "react";
 import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
 
 const BlogCard = ({ blog, type = "feed", handleDelete, handleEdit }) => {
-  console.log(blog);
   return (
     <div className="dark:border-gunmetal border-teal-100 border rounded sm:col-auto 3xs:col-span-12 cursor-pointer shadow-md hover:shadow-lg  transition-shadow dark:shadow-black self-start ">
       <div className="flex items-center gap-2 dark:border-gunmetal border-teal-100  border-b p-2">
