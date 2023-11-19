@@ -10,11 +10,8 @@ const TopRated = () => {
     const getBlogs = async () => {
       console.log("use effect triggered");
       setLoading(true);
-      const response = await fetch("/api/blogs/read/all", {
+      const response = await fetch("/api/blogs/read/all/1", {
         method: "GET",
-        headers: {
-          "content-type": "application/json",
-        },
       });
       const json = await response.json();
       console.log(json);

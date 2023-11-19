@@ -6,6 +6,7 @@ export const GET = async (req, { params }) => {
   console.log(params);
   try {
     await connectToDB();
+
     const resp = await Blog.find({ user: userId }).populate("user");
     console.log(resp);
     return new Response(JSON.stringify(resp), { status: 200 });

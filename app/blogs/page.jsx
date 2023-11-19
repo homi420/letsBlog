@@ -23,11 +23,8 @@ const Blogs = () => {
     const getBlogs = async () => {
       setLoading(true);
       console.log("Use effect triggered");
-      const response = await fetch("/api/blogs/read/all", {
+      const response = await fetch("/api/blogs/read/all/1", {
         method: "GET",
-        headers: {
-          "content-type": "application/json",
-        },
       });
       const json = await response.json();
       console.log(json);
