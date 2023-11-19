@@ -78,12 +78,9 @@ const Form = ({ type, id }) => {
         />
       </div>
       <div className="flex justify-end col-span-2">
-        <button
-          className={`${!isDisabled ? "blue_btn" : "hidden"} `}
-          disabled={isDisabled}
-          type="button"
-        >
+        <button disabled={isDisabled} type="button">
           <Link
+            className={`${!isDisabled ? "blue_btn" : "hidden"} `}
             href={
               type === "add" ? "/createBlog/write" : `/EditBlog/${id}/write`
             }

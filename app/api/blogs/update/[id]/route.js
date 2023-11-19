@@ -4,9 +4,9 @@ import { connectToDB } from "@utils/database";
 export const PATCH = async (req, { params }) => {
   const id = params.id;
   const { user, title, category, description, blog } = await req.json();
+  console.log(blog);
   try {
     await connectToDB();
-    console.log(blog);
     const blogToFind = await Blog.findById(id);
     if (JSON.stringify(blogToFind.user) === JSON.stringify(user)) {
       await Blog.findByIdAndUpdate(
