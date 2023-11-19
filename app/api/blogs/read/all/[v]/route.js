@@ -1,8 +1,8 @@
 import Blog from "@models/Blogs";
 import { connectToDB } from "@utils/database";
 
-export const GET = async (req) => {
-  await req.json();
+export const GET = async (req, { params }) => {
+  const { v } = params;
   try {
     await connectToDB();
     const resp = await Blog.find({}).populate("user");
