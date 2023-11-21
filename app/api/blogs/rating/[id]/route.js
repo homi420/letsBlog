@@ -5,7 +5,7 @@ export const POST = async (req, { params }) => {
   const { rater, rating } = await req.json();
   const { id } = params;
   try {
-    connectToDB();
+    await connectToDB();
     const blog = await Blogs.findById(id).populate("user");
     if (!rater) {
       return new Response(JSON.stringify({ message: "Please login first." }), {
