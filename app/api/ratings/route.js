@@ -55,6 +55,12 @@ export const GET = async (req) => {
     return new Response(JSON.stringify(ratings), { status: 200 });
   } catch (error) {
     console.log(error);
+    if (error.code === "ETIMEDOUT") {
+      return new Response(JSON.stringify({ message: "Gateway Timeout" }), {
+        status: 504,
+      });
+    }
+
     return new Response(JSON.stringify({ message: "Internal Server Error" }), {
       status: 500,
     });
