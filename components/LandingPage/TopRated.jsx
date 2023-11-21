@@ -1,22 +1,35 @@
 "use client";
 import BlogCard from "@components/BlogCard";
+import { useMyContext } from "@state/MyContext";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const TopRated = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { handleAlert } = useMyContext();
+  const [repeatCount, setRepeatCount] = useState(0);
   useEffect(() => {
+    const repeat = async () => {
+      setRepeatCount((prevState) => prevState + 1);
+      await getBlogs();
+    };
     const getBlogs = async () => {
       setLoading(true);
       const response = await fetch("/api/blogs/read/all/1", {
         method: "GET",
       });
       const json = await response.json();
-      const sortedJson = json.sort((a, b) => b.avgRating - a.avgRating);
-      const topRated = sortedJson.slice(0, 2);
-      setBlogs(topRated);
-      setLoading(false);
+      if (response.ok) {
+        const sortedJson = json.sort((a, b) => b.avgRating - a.avgRating);
+        const topRated = sortedJson.slice(0, 2);
+        setBlogs(topRated);
+        setLoading(false);
+      } else {
+        if (repeatCount <= 3) await repeat();
+        else window.location.reload();
+        setLoading(false);
+      }
     };
     getBlogs();
   }, []);

@@ -97,13 +97,23 @@ const TestimonialCards = ({ userName, image, review, rating }) => {
 };
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
+  const [repeatCount, setRepeatCount] = useState(0);
+
   useEffect(() => {
+    const repeat = async () => {
+      setRepeatCount((prevState) => prevState + 1);
+      await getBlogs();
+    };
     const getReviews = async () => {
       const response = await fetch("/api/ratings", {
         method: "GET",
       });
       const json = await response.json();
-      setReviews(json);
+      if (response.ok) setReviews(json);
+      else {
+        if (repeatCount <= 3) await repeat();
+        else window.location.reload();
+      }
     };
     getReviews();
   }, []);

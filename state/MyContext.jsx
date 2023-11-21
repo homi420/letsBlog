@@ -88,7 +88,6 @@ export const MyContextProvider = ({ children }) => {
   // Updating the Blog...
   const updateBlog = async () => {
     setIsPosting(true);
-    console.log(rawContent);
     const response = await fetch(`/api/blogs/update/${blogToUpdate}`, {
       method: "PATCH",
       body: JSON.stringify({
