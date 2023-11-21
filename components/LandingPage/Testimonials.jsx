@@ -109,13 +109,17 @@ const Testimonials = () => {
       await getBlogs();
     };
     const getReviews = async () => {
-      const response = await fetch("/api/ratings", {
-        method: "GET",
-      });
-      const json = await response.json();
-      if (response.ok) setReviews(json);
-      else {
-        router.refresh();
+      try {
+        const response = await fetch("/api/ratings", {
+          method: "GET",
+        });
+        const json = await response.json();
+        if (response.ok) setReviews(json);
+        else {
+          router.refresh();
+        }
+      } catch (error) {
+        console.log(error);
       }
     };
     getReviews();
