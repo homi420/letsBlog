@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import Image from "next/image";
 import { useMyContext } from "@state/MyContext";
+import { useRouter } from "next/navigation";
 
 const RatingStars = ({ rating }) => {
   const filledStars = Math.floor(rating);
@@ -100,6 +101,7 @@ const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   const [repeatCount, setRepeatCount] = useState(0);
   const { handleAlert } = useMyContext();
+  const router = useRouter();
 
   useEffect(() => {
     const repeat = async () => {
@@ -114,7 +116,7 @@ const Testimonials = () => {
       if (response.ok) setReviews(json);
       else {
         if (repeatCount <= 3) await repeat();
-        else handleAlert(response, json);
+        else router.refresh();
       }
     };
     getReviews();
