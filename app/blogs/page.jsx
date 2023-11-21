@@ -35,7 +35,9 @@ const Blogs = () => {
       const json = await response.json();
       if (response.ok) {
         setBlogs(json);
+
         setFiltered(json);
+        setLoading(false);
       } else {
         if (repeatCount <= 3) await repeat();
         else window.location.reload();
