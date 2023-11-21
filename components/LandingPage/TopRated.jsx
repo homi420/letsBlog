@@ -3,10 +3,12 @@ import BlogCard from "@components/BlogCard";
 import { useMyContext } from "@state/MyContext";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-
+import { useRouter } from "next/navigation";
 const TopRated = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
   const { handleAlert } = useMyContext();
   const [repeatCount, setRepeatCount] = useState(0);
   useEffect(() => {
@@ -27,7 +29,7 @@ const TopRated = () => {
         setLoading(false);
       } else {
         if (repeatCount <= 3) await repeat();
-        else handleAlert(response, json);
+        else router.refresh();
         setLoading(false);
       }
     };
