@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import Image from "next/image";
+import { useMyContext } from "@state/MyContext";
 
 const RatingStars = ({ rating }) => {
   const filledStars = Math.floor(rating);
@@ -98,6 +99,7 @@ const TestimonialCards = ({ userName, image, review, rating }) => {
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   const [repeatCount, setRepeatCount] = useState(0);
+  const { handleAlert } = useMyContext();
 
   useEffect(() => {
     const repeat = async () => {
@@ -112,7 +114,7 @@ const Testimonials = () => {
       if (response.ok) setReviews(json);
       else {
         if (repeatCount <= 3) await repeat();
-        else window.location.reload();
+        else handleAlert(response, json);
       }
     };
     getReviews();

@@ -27,7 +27,7 @@ const TopRated = () => {
         setLoading(false);
       } else {
         if (repeatCount <= 3) await repeat();
-        else window.location.reload();
+        else handleAlert(response, json);
         setLoading(false);
       }
     };
