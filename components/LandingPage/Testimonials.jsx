@@ -115,8 +115,7 @@ const Testimonials = () => {
       const json = await response.json();
       if (response.ok) setReviews(json);
       else {
-        if (repeatCount <= 3) await repeat();
-        else router.refresh();
+        router.refresh();
       }
     };
     getReviews();

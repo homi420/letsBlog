@@ -39,8 +39,7 @@ const Blogs = () => {
         setFiltered(json);
         setLoading(false);
       } else {
-        if (repeatCount <= 3) await repeat();
-        else handleAlert(response, json);
+        handleAlert(response, json);
         setLoading(false);
       }
     };

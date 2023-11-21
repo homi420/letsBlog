@@ -28,8 +28,7 @@ const TopRated = () => {
         setBlogs(topRated);
         setLoading(false);
       } else {
-        if (repeatCount <= 3) await repeat();
-        else router.refresh();
+        router.refresh();
         setLoading(false);
       }
     };
