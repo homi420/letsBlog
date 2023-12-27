@@ -1,4 +1,5 @@
 import Ratings from "@models/Ratings";
+import { connectToDB } from "@utils/database";
 
 const checkReview = async (user) => {
   const ratings = await Ratings.find({ user });
@@ -11,6 +12,7 @@ const checkReview = async (user) => {
 
 export const POST = async (req) => {
   const { user, review, rating } = await req.json();
+  await connectToDB();
   if (!user) {
     return new Response(JSON.stringify({ message: "User Id is Required" }), {
       status: 400,
@@ -51,6 +53,7 @@ export const POST = async (req) => {
 
 export const GET = async (req) => {
   try {
+    await connectToDB();
     const ratings = await Ratings.find().populate("user");
     return new Response(JSON.stringify(ratings), { status: 200 });
   } catch (error) {
