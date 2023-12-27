@@ -1,8 +1,10 @@
 import Blog from "@models/Blogs";
+import { connectToDB } from "@utils/database";
 
 export const GET = async (req, { params }) => {
   const field = params.field;
   const id = params.id;
+  await connectToDB();
   try {
     const resp = await Blog.find({
       _id: { $ne: id },
